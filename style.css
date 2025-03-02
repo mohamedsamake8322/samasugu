@@ -1,21 +1,25 @@
-
-body {
-    font-family: 'Montserrat', sans-serif;
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     background-attachment: fixed;
     background-size: cover;
     color: #ffffff;
+    scroll-behavior: smooth;
 }
 
+/* Header */
 header {
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    position: relative;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    box-shadow: 0px 4px 6px #0000001a;
     border-radius: 10px;
     backdrop-filter: blur(10px);
 }
@@ -45,8 +49,9 @@ header {
     color: #00c6ff;
 }
 
+/* Sections */
 section {
-    padding: 40px;
+    padding: 60px 40px;
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
     margin: 20px auto;
@@ -76,6 +81,7 @@ p.large-text {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 30px;
@@ -86,8 +92,9 @@ footer {
     backdrop-filter: blur(10px);
 }
 
+/* Buttons */
 .button {
-    background-color: #00c6ff;
+    background: linear-gradient(45deg, #00c6ff, #007bff);
     color: white;
     padding: 15px 30px;
     text-decoration: none;
@@ -143,5 +150,21 @@ footer {
 
 .dark-mode .button:hover {
     background-color: #007bff;
+}
 
+/* Responsive */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+    .menu li {
+        margin-bottom: 10px;
+    }
+    .small-image {
+        width: 80%;
+    }
 }

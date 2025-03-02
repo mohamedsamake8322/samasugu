@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Partie 1 : Gestion du thème sombre/clair
     const toggleThemeBtn = document.createElement("button");
     toggleThemeBtn.textContent = "🌙 Mode Sombre";
     toggleThemeBtn.style.position = "fixed";
@@ -13,16 +14,24 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleThemeBtn.style.fontSize = "1em";
     document.body.appendChild(toggleThemeBtn);
 
+    // Vérification du mode sombre stocké
+    if (localStorage.getItem("dark-mode") === "enabled") {
+        document.body.classList.add("dark-mode");
+        toggleThemeBtn.textContent = "☀️ Mode Clair";
+    }
+
     toggleThemeBtn.addEventListener("click", function() {
         document.body.classList.toggle("dark-mode");
         if (document.body.classList.contains("dark-mode")) {
             toggleThemeBtn.textContent = "☀️ Mode Clair";
+            localStorage.setItem("dark-mode", "enabled");
         } else {
             toggleThemeBtn.textContent = "🌙 Mode Sombre";
+            localStorage.setItem("dark-mode", "disabled");
         }
     });
 
-    // Ajout d'animations aux sections
+    // Partie 2 : Animation des sections
     const sections = document.querySelectorAll("section");
     sections.forEach(section => {
         section.style.opacity = "0";
@@ -41,5 +50,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     window.addEventListener("scroll", revealSections);
-    revealSections(); // Appel initial
+    revealSections(); // Appel initial pour révéler les sections visibles dès le début
 });
