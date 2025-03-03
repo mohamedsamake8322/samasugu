@@ -1,0 +1,30 @@
+# Exclure les fichiers système Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Exclure les fichiers personnels
+/AppData/
+/Desktop/
+/Documents/
+/Downloads/
+/Music/
+/Pictures/
+/Videos/
+/OneDrive/
+/Saved Games/
+/Searches/
+/Favorites/
+/Links/
+/Templates/
+/Start Menu/
+
+# Exclure les fichiers spécifiques à certains logiciels
+.vscode/
+.node_repl_history
+.npmrc
+.php_history
+.lesshst
+.gitconfig
